@@ -23,9 +23,10 @@ defmodule FinalProjectWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", FinalProjectWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", FinalProjectWeb do
+    pipe_through :api
+    resources "/humanresources", HumanResourceAPIController
+  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:final_project, :dev_routes) do
