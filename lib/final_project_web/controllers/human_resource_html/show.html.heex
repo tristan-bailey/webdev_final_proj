@@ -1,0 +1,19 @@
+<.header>
+  Human resource <%= @human_resource.id %>
+  <:subtitle>This is a human_resource record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/humanresources/#{@human_resource}/edit"}>
+      <.button>Edit human_resource</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Firstname"><%= @human_resource.firstname %></:item>
+  <:item title="Lastname"><%= @human_resource.lastname %></:item>
+  <:item title="Employeeid"><%= @human_resource.employeeid %></:item>
+  <:item title="Doh"><%= @human_resource.doh %></:item>
+  <:item title="Department"><%= @human_resource.department %></:item>
+</.list>
+
+<.back navigate={~p"/humanresources"}>Back to humanresources</.back>

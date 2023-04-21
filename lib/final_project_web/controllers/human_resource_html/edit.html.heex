@@ -1,0 +1,8 @@
+<.header>
+  Edit Human resource <%= @human_resource.id %>
+  <:subtitle>Use this form to manage human_resource records in your database.</:subtitle>
+</.header>
+
+<.human_resource_form changeset={@changeset} action={~p"/humanresources/#{@human_resource}"} />
+
+<.back navigate={~p"/humanresources"}>Back to humanresources</.back>

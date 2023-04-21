@@ -1,0 +1,27 @@
+<.header>
+  Listing Humanresources
+  <:actions>
+    <.link href={~p"/humanresources/new"}>
+      <.button>New Human resource</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="humanresources" rows={@humanresources} row_click={&JS.navigate(~p"/humanresources/#{&1}")}>
+  <:col :let={human_resource} label="Firstname"><%= human_resource.firstname %></:col>
+  <:col :let={human_resource} label="Lastname"><%= human_resource.lastname %></:col>
+  <:col :let={human_resource} label="Employeeid"><%= human_resource.employeeid %></:col>
+  <:col :let={human_resource} label="Doh"><%= human_resource.doh %></:col>
+  <:col :let={human_resource} label="Department"><%= human_resource.department %></:col>
+  <:action :let={human_resource}>
+    <div class="sr-only">
+      <.link navigate={~p"/humanresources/#{human_resource}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/humanresources/#{human_resource}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={human_resource}>
+    <.link href={~p"/humanresources/#{human_resource}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>
